@@ -8,8 +8,12 @@
 	    animation: false,
 	    timeline: false
     });
-	
-	// Create an initial camera view
+
+    var czmlSource = new Cesium.CzmlDataSource();
+    czmlSource.loadUrl(../czml/entries.czml);
+    viewer.dataSources.add(czmlSource);
+
+    // Create an initial camera view
     var initialPosition = new Cesium.Cartesian3.fromDegrees(151.640017,-33.085629, 500);
     var initialOrientation = new Cesium.HeadingPitchRoll.fromDegrees(30, -90, 0);
     var homeCameraView = {
